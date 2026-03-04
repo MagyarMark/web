@@ -30,5 +30,73 @@
             </div>
         </div>
     </header>
+
+    <main>
+        <section class="hero">
+            <h1>Portfólió</h1>
+            <p class="hero-subtitle">Nézd meg a projekteket, amelyeken dolgoztunk</p>
+        </section>
+
+        <div class="cards-container">
+            <div class="card">
+                <div class="card-icon">🏢</div>
+                <h3>E-Commerce Platform</h3>
+                <p>Modern e-kereskedelmi platform fejlesztése egy nagy kereskedő számára. Teljes integrációval a fizetési rendszerekhe és készletkezeléshez. Az oldal 300% forgalomnövekedéshez vezetett az első évben.</p>
+                <p style="color: #667eea; font-weight: bold; margin-top: 10px;">React, Node.js, MongoDB</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🏥</div>
+                <h3>Orvosi Klinika Weboldal</h3>
+                <p>Teljes körű weboldal tervezés és fejlesztés egy szakterület vezető klinikai hálózatnak. Online időpontfoglalás, beteg portál, és integrált intranet rendszer.</p>
+                <p style="color: #667eea; font-weight: bold; margin-top: 10px;">WordPress, PHP, MySQL</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🎓</div>
+                <h3>Online Tanulási Platform</h3>
+                <p>Interaktív online kurzusok platformja teljesen fejlesztett LMS funkcionalitással. Videó streaming, kvízek, tanúsítványok és haladáskövető rendszer.</p>
+                <p style="color: #667eea; font-weight: bold; margin-top: 10px;">Vue.js, Laravel, PostgreSQL</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📱</div>
+                <h3>Mobil App - Étterem Rendelés</h3>
+                <p>Teljes körű mobil alkalmazás fejlesztése iOS és Android platformra. Valós idejű rendeléskövetés, étlap kezelés, és felhasználói értékelések.</p>
+                <p style="color: #667eea; font-weight: bold; margin-top: 10px;">React Native, Firebase</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🏠</div>
+                <h3>Ingatlan Portál</h3>
+                <p>Komplex ingatlanhirdetési platform fejlesztése. Fejlett keresési szűrők, virtuális túrák, hipotéka kalkulátor, és ügynök kezelési rendszer.</p>
+                <p style="color: #667eea; font-weight: bold; margin-top: 10px;">Next.js, TypeScript, GraphQL</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🎮</div>
+                <h3>Gaming Studio Weboldal</h3>
+                <p>Lenyűgöző weboldal egy játékstúdiónak. Interaktív játék prezentációk, közösségi funkciók, és az elő-regisztráció rendszer az új játékokhoz.</p>
+                <p style="color: #667eea; font-weight: bold; margin-top: 10px;">Three.js, WebGL, Node.js</p>
+            </div>
+        </div>
+
+        <section style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; padding: 50px 30px; text-align: center; color: white; margin-top: 60px; margin-bottom: 60px;">
+            <h2 style="font-size: 36px; margin-bottom: 15px;">Sajátod lehetne a következő sikeres projekt!</h2>
+            <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 30px; font-size: 16px;">Lépj velünk kapcsolatba és tudjuk meg, hogyan tudjuk elérni céljaidat.</p>
+            <button class="btn" onclick="window.location.href='kapcsolat.html'">Kérj ajánlatot</button>
+        </section>
+    </main>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const nav = document.querySelector('nav');
+
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        // Menü bezárása kattintáskor
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>

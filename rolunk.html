@@ -30,5 +30,89 @@
             </div>
         </div>
     </header>
+
+    <main>
+        <section class="hero">
+            <h1>Rólunk</h1>
+            <p class="hero-subtitle">Ismerd meg csapatunkat és a történetünket</p>
+        </section>
+
+        <section style="margin-bottom: 60px;">
+            <h2 style="color: #333; font-size: 32px; margin-bottom: 20px;">Kik vagyunk?</h2>
+            <p style="font-size: 18px; line-height: 1.8; margin-bottom: 20px;">
+                Egy innovatív és tehetséges csapat vagyunk, akik szenvedéllyel dolgozunk a digitális transzformáció terén. 
+                Több mint 10 éve segítünk vállalatoknak online jelenléte kiterjesztésében és digitális céljainak elérésében.
+            </p>
+            <p style="font-size: 18px; line-height: 1.8;">
+                Az ügyfél-központú megközelítés és a műszaki kiválóság a munkánk alapja. Büszkék vagyunk arra, hogy 
+                olyan megoldásokat hozunk létre, amelyek valódi értéket adnak partnereinnek.
+            </p>
+        </section>
+
+        <section style="margin-bottom: 60px;">
+            <h2 style="color: #333; font-size: 32px; margin-bottom: 20px;">Értékeink</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-icon">💡</div>
+                    <h3>Innováció</h3>
+                    <p>Folyamatosan fejlesztünk és alkalmazkodunk az új technológiákhoz az iparvezetés érdekében.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🤝</div>
+                    <h3>Partnerség</h3>
+                    <p>Nem csak szolgáltatók vagyunk, hanem a te cél megvalósításában közreműködő partnerek.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">✨</div>
+                    <h3>Minőség</h3>
+                    <p>A legmagasabb minőségi standardok betartása és folyamatos javítás a mindennapi munkánk.</p>
+                </div>
+            </div>
+        </section>
+
+        <section style="background: #f9f9f9; padding: 40px; border-radius: 12px; margin-bottom: 60px;">
+            <h2 style="color: #333; font-size: 32px; margin-bottom: 30px; text-align: center;">Miért válassz minket?</h2>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div style="margin-bottom: 20px; text-align: left;">
+                    <h3 style="color: #667eea; margin-bottom: 10px;">✓ Tapasztalt csapat</h3>
+                    <p>10+ éves tapasztalat a webfejlesztés, design és digitális marketing terén</p>
+                </div>
+                <div style="margin-bottom: 20px; text-align: left;">
+                    <h3 style="color: #667eea; margin-bottom: 10px;">✓ Megfizetható árak</h3>
+                    <p>Rugalmas csomagok és árak, amely minden méretű vállalkozáshoz passzol</p>
+                </div>
+                <div style="margin-bottom: 20px; text-align: left;">
+                    <h3 style="color: #667eea; margin-bottom: 10px;">✓ Támogatás 24/7</h3>
+                    <p>Folyamatos ügyfél-támogatás és karbantartási szolgáltatások</p>
+                </div>
+                <div style="text-align: left;">
+                    <h3 style="color: #667eea; margin-bottom: 10px;">✓ Bizonyított szukcessz</h3>
+                    <p>Több száz elégedett kliens és sikeres projektek világszerte</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Kész a felhasználásra?</h2>
+            <p>Lépets kapcsolatba velünk és kezdjük el az együttműködést!</p>
+            <button class="btn" onclick="window.location.href='kapcsolat.html'">Lépj velünk kapcsolatba</button>
+        </section>
+    </main>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const nav = document.querySelector('nav');
+
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        // Menü bezárása kattintáskor
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>

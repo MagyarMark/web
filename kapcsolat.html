@@ -5,6 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kapcsolat</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .contact-info {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .contact-info h3 {
+            color: #667eea;
+            font-size: 20px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-info p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .form-btn {
+            background-color: #667eea;
+            color: white;
+            padding: 12px 40px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .form-btn:hover {
+            background-color: #764ba2;
+            transform: scale(1.02);
+        }
+
+        @media (max-width: 768px) {
+            .contact-section {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -30,5 +117,99 @@
             </div>
         </div>
     </header>
+
+    <main>
+        <section class="hero">
+            <h1>Kapcsolat</h1>
+            <p class="hero-subtitle">Lépj velünk kapcsolatba és beszélgessünk a te projektjéről</p>
+        </section>
+
+        <div class="contact-section">
+            <div class="contact-info">
+                <h3>📍 Cím</h3>
+                <p>1051 Budapest, Deák Ferenc utca 12.<br>Magyarország</p>
+
+                <h3>📞 Telefonszám</h3>
+                <p><a href="tel:+36123456789" style="color: #667eea; text-decoration: none;">+36 1 234 5678</a></p>
+
+                <h3>✉️ Email</h3>
+                <p><a href="mailto:info@example.com" style="color: #667eea; text-decoration: none;">info@example.com</a></p>
+
+                <h3>⏰ Nyitvatartás</h3>
+                <p>
+                    Hétfő - Péntek: 09:00 - 17:00<br>
+                    Szombat: 10:00 - 14:00<br>
+                    Vasárnap: Csukva
+                </p>
+
+                <h3>🌐 Közösségi Média</h3>
+                <p style="font-size: 24px; margin-top: 10px;">
+                    <a href="#" style="text-decoration: none; color: #667eea; margin-right: 15px;">f</a>
+                    <a href="#" style="text-decoration: none; color: #667eea; margin-right: 15px;">𝕏</a>
+                    <a href="#" style="text-decoration: none; color: #667eea; margin-right: 15px;">in</a>
+                    <a href="#" style="text-decoration: none; color: #667eea;">ig</a>
+                </p>
+            </div>
+
+            <form onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Teljes név *</label>
+                    <input type="text" id="name" name="name" required placeholder="Neved vagy céged neve">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email cím *</label>
+                    <input type="email" id="email" name="email" required placeholder="email@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Telefonszám</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+36 1 234 5678">
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Tárgy *</label>
+                    <input type="text" id="subject" name="subject" required placeholder="Miről szólt az üzeneted?">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Üzenet *</label>
+                    <textarea id="message" name="message" required placeholder="Írj nekünk az igényeidről..."></textarea>
+                </div>
+
+                <button type="submit" class="form-btn">Küldj üzenetet</button>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const nav = document.querySelector('nav');
+
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        // Menü bezárása kattintáskor
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+            });
+        });
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // Simuláljuk az email küldést
+            alert(`Köszönjük az üzenetedet, ${name}!\n\nMegkaptuk a üzenetedet. Hamarosan válaszolunk.`);
+
+            // Az űrlap kiürítése
+            event.target.reset();
+        }
+    </script>
 </body>
 </html>
